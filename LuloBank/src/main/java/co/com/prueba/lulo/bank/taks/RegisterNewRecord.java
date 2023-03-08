@@ -6,10 +6,10 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
-import net.serenitybdd.screenplay.rest.interactions.Get;
 import net.serenitybdd.screenplay.rest.interactions.Post;
+import net.thucydides.core.annotations.Step;
 
-import java.util.List;
+import static net.serenitybdd.rest.SerenityRest.lastResponse;
 
 
 public class RegisterNewRecord implements Task {
@@ -20,16 +20,22 @@ public class RegisterNewRecord implements Task {
         this.data = data;
     }
 
-
+    @Override
+    @Step("{0} consume service user/create")
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(Post.to("/api/v1/create").with(
+        actor.attemptsTo(Post.to("user/create").with(
                 requestSpecification -> requestSpecification
                         .contentType(ContentType.JSON)
+                        .header("app-id","640768bf9985da2dc047cc6a")
                         .body(data)
+                        .log()
+                        .all()
+
         ));
+        lastResponse().peek();
     }
 
-    public static Performable Info(RegisterUserInfo data) {
+    public static Performable info(RegisterUserInfo data) {
         return Tasks.instrumented(RegisterNewRecord.class, data);
     }
 }

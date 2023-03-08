@@ -7,3 +7,8 @@ Feature: dummy API consumption
     Given Maria wants to be able to test common API verbs
     When he sends the necessary information to delete the record
     Then he should get a deleted record in the database
+
+  Scenario: Delete an employee record
+    Given Maria wants to be able to test common API verbs
+    When he sends the necessary information to delete the record
+    Then he validates that the id does not exist

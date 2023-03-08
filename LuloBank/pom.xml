@@ -93,13 +93,7 @@
 		</pluginRepository>
 	</pluginRepositories>
 	<dependencies>
-		<dependency>
-			<groupId>io.cucumber</groupId>
-			<artifactId>cucumber-java</artifactId>
-			<version>${cucumber.version}</version>
-			<scope>test</scope>
-		</dependency>
-		
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -153,7 +147,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<serenity.version>3.6.12</serenity.version>
-		<serenity.maven.version>1.9.36</serenity.maven.version>
+		<serenity.maven.version>3.6.12</serenity.maven.version>
 		<serenity.cucumber.version>3.6.12</serenity.cucumber.version>
 		<cucumber.version>2.3.1</cucumber.version>
 		<parallel.tests>4</parallel.tests>

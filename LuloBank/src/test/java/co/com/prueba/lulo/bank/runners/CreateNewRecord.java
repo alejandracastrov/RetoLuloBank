@@ -1,7 +1,7 @@
 package co.com.prueba.lulo.bank.runners;
 
-import cucumber.api.CucumberOptions;
-import cucumber.api.SnippetType;
+
+import io.cucumber.junit.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
 import org.junit.runner.RunWith;
 
@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features/create_new_record.feature",
         glue = "co.com.prueba.lulo.bank.stepdefinitions",
-        snippets = SnippetType.CAMELCASE
+        snippets = CucumberOptions.SnippetType.CAMELCASE
 )
 public class CreateNewRecord {
 }

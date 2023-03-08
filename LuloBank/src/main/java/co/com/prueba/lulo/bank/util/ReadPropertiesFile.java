@@ -12,6 +12,7 @@ public class ReadPropertiesFile {
     private static String url;
     private static ReadPropertiesFile instance;
 
+    private static String APP_ID = "640768bf9985da2dc047cc6a";
 
     public static ReadPropertiesFile getInstance() throws IOException {
         if (instance == null) {
